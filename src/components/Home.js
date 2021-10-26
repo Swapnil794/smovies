@@ -14,17 +14,18 @@ import { useHomeFetch } from '../hooks/useHomeFtech';
 import NoImage from '../images/no_image.jpg';
 
 const Home = () => {
+  let i = Math.floor(90 * Math.random()) + 1;
   const { state, loading, error, setSearchTerm, searchTerm, setIsLoadingMore } =
     useHomeFetch();
   console.log(state);
   if (error) return <div>something went wrong...</div>;
   return (
     <>
-      {state.results[0] ? (
+      {state.results[i] ? (
         <HeroImage
-          image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${state.results[0].backdrop_path}`}
-          title={`${state.results[0].original_title}`}
-          text={`${state.results[0].overview}`}
+          image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${state.results[i].backdrop_path}`}
+          title={`${state.results[i].original_title}`}
+          text={`${state.results[i].overview}`}
         />
       ) : null}
       <SearchBar setSearchTerm={setSearchTerm} />
