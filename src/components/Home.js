@@ -14,7 +14,7 @@ import { useHomeFetch } from '../hooks/useHomeFtech';
 import NoImage from '../images/no_image.jpg';
 
 const Home = () => {
-  let i = Math.floor(90 * Math.random()) + 1;
+  let i = Math.floor(9 * Math.random()) + 1;
   const { state, loading, error, setSearchTerm, searchTerm, setIsLoadingMore } =
     useHomeFetch();
   console.log(state);
